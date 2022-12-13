@@ -94,7 +94,7 @@ main{
     display: block;
 }
 
-.contactenos{
+.contactenos_{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +107,7 @@ main{
     font-size: 29px;
     color: white;
 }
-.contactenos p{
+.contactenos_ p{
     font-size: 20px;
     color: white;
     text-decoration: none;
