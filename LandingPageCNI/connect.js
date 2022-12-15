@@ -10,7 +10,7 @@ var conexion = mysql.createConnection({
   host: "34.196.67.76",
   user: "miguel",
   password: "1234",
-  database: "login-socket",
+  database: "dbconsulta"
 });
 
 conexion.connect(function (error) {
