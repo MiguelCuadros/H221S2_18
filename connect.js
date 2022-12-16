@@ -7,10 +7,10 @@ app.use(express.json());
 app.use(cors());
 
 var conexion = mysql.createConnection({
-  host: "34.196.67.76",
-  user: "miguelcg",
-  password: "1234",
-  database: "dbconsulta"
+  host: "localhost",
+  user: "root",
+  password: "root",
+  database: "dbRestaurante"
 });
 
 conexion.connect(function (error) {
@@ -27,7 +27,7 @@ app.listen(puerto, function () {
   console.log("Servidor funcionando en puerto: " + puerto);
 });
 
-app.post("/api/consulta", (req, res) => {
+app.post("/api/pedido", (req, res) => {
 	let data = {
     	userped: req.body.USERPED,
     	emausped: req.body.EMAUSPED,
@@ -35,7 +35,7 @@ app.post("/api/consulta", (req, res) => {
     	foodped: req.body.FOODPED,
     	msgped: req.body.MSGPED
 	};
-	let sql = "INSERT INTO consulta SET ?";
+	let sql = "INSERT INTO pedido SET ?";
 	conexion.query(sql, data, function (error, results) {
   	if (error) {
     	throw error;
@@ -45,3 +45,10 @@ app.post("/api/consulta", (req, res) => {
   	}
 	});
 });
+
+const path = require("path");
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(__dirname + '/'));

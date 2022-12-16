@@ -31,7 +31,7 @@ app.use(express.static(__dirname + '/'));
 //});
 
 
-  
+
 // http://localhost:3000/auth
 app.post('/auth', function(request, response) {
 	// Capture the input fields
@@ -52,7 +52,7 @@ app.post('/auth', function(request, response) {
 				response.redirect('/home');
 			} else {
 				response.send('Usuario y/o Contraseña Incorrecta');
-			}			
+			}
 			response.end();
 		});
 	} else {

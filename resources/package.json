@@ -1,8 +1,8 @@
 {
-  "name": "resources",
+  "name": "consulta",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "registro.js",
   "scripts": {
     "start": "nodemon connect.js"
   },
